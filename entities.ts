@@ -5,7 +5,7 @@ locationName: string;
 
 locationAddress: string;
 locationLatLng: number[];
-manager?: Manager;
+managers: Manager;
 region?: any;
 employees?: Employee[];
 }

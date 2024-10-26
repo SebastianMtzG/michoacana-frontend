@@ -1,19 +1,20 @@
 import axios from "axios";
 import { cookies } from "next/headers";
-import { TOKEN_NAME } from "@/constants";
+import { API_URL, TOKEN_NAME } from "@/constants";
 import { Select } from "@nextui-org/react";
 import { Location } from "@/entities";
 import SelectLocation from "./_components/SelectLocation";
 import LocationCard from "./_components/LocationCard";
+import FormNewlocation from "./_components/FormNewLocation";
+import DeleteLocationButton from "./_components/DeleteLocatinButton";
+import { authHeaders } from "@/helpers/authHeaders";
 
 const LocationsPage = async ({searchParams} : {
      searchParams: { [key: string]: string | string[] | undefined } ;
 }) => {
-    const userCookies = cookies();
-    const token = userCookies.get(TOKEN_NAME) ?. value
-    let {data} = await axios.get<Location[]>("htpps://127.0.0.1:4000/locations", {
+    let {data} = await axios.get<Location[]>(`${API_URL}/locations`, {
         headers: {
-            Authorization: ` Bearer ${token}`
+            ...authHeaders()
         },
     },
 );
@@ -38,6 +39,10 @@ data = [
                 <div className="w-8/12">
                     <LocationCard store={searchParams.store}/>
                 </div>
+                <div className="w-6/12">
+                    <FormNewlocation store={searchParams.store}/>
+                </div>
+                <DeleteLocationButton store={searchParams.store}/>
                 </div>
             </div>
          </div>
