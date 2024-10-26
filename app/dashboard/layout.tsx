@@ -5,17 +5,17 @@ import Sidebar from "./_components/_sidebar/Sidebar";
 
 export default function DashboardLayout({
     children,
-    count,
+    locations,
 }: Readonly<{
     children:React.ReactNode;
-    count:React.ReactNode;
+    locations:React.ReactNode;
 }>) {
     return( <div className="bg-pink-50">
         <Header />
         <div className="flex flex-row items-center">
         <Sidebar />
          {children}
-         {count}
+         {locations}
  
         </div>
       
