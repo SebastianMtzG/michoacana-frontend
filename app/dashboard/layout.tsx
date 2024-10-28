@@ -1,6 +1,9 @@
+"use client";
+
 import React from "react";
 import Header from "./_components/Header";
 import Sidebar from "./_components/_sidebar/Sidebar";
+import { usePathname } from "next/navigation";
 
 
 export default function DashboardLayout({
@@ -10,14 +13,16 @@ export default function DashboardLayout({
     children:React.ReactNode;
     locations:React.ReactNode;
 }>) {
-    return( <div className="bg-pink-50">
+    const path = usePathname();
+    return(
+         <div className="bg-pink-50">
         <Header />
         <div className="flex flex-row items-center">
         <Sidebar />
          {children}
-         {locations}
- 
+        {path === "/dashboard" ? locations : null}
         </div>
       
-        </div>)
+        </div>
+        );
 }
