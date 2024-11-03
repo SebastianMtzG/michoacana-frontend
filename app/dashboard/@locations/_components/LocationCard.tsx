@@ -2,7 +2,7 @@ import { Location } from "@/entities";
 import { Card, CardHeader, CardBody, Divider } from "@nextui-org/react";
 import { API_URL } from "@/constants";
 import { datalist } from "framer-motion/client";
-import { Link } from "@nextui-org/react";
+import Link from "next/link";
 import { authHeaders } from "@/helpers/authHeaders";
 
 export default async function LocationCard({ store }: {store: string | string[] | undefined }) {
@@ -24,7 +24,7 @@ export default async function LocationCard({ store }: {store: string | string[] 
             </CardHeader>
             <Divider />
             <CardBody>
-                <p className="w-full">Manager: <Link href="{{pathname:'/dashboard/managers'}}" > 
+                <p className="w-full">Manager: <Link href={{pathname: `/dashboard/managers/${data.managers?.managerId} `}}> 
                 <b>{data.managers?.managerFullNmame}</b></Link></p>
             </CardBody>
         </Card>

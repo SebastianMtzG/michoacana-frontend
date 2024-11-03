@@ -20,7 +20,7 @@ const disabledKeys = locations.map((location: Location) => {
             {managers.map((manager: Manager) =>{
             return (
             <SelectItem key={manager.managerId}>
-            [manager.managerFullName]
+            {manager.managerFullNmame}
             </ SelectItem>
                         );
             })}

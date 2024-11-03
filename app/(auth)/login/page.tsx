@@ -3,7 +3,7 @@ import { Input, Button } from "@nextui-org/react"
 import Link from "next/link"
 import { API_URL } from "@/constants"
 import { useState } from "react";
-import { useRouter } from "next/router";
+import { useRouter } from "next/navigation";
 
 export default function LoginPage(){
     const [submitting, setSubmitting] = useState(false);
@@ -19,6 +19,7 @@ export default function LoginPage(){
         try {
             const response = await fetch(`${API_URL}/auth/login`, {
                 method: "POST",
+                headers: { 'content-type': 'application/json'},
                 body:JSON.stringify(authData),  
                     credentials: 'include',
                 }
@@ -40,7 +41,7 @@ export default function LoginPage(){
     </div>
     
     <div className="flex flex-col items-center gap-2">
-    <Button color="primary" type="submit" disabled={submitting} >{submitting ? "Enviando..." : "Iniciar Sesión"} Iniciar Sesión </Button>
+    <Button color="primary" type="submit" disabled={submitting} >{submitting ? "Enviando..." : "Iniciar Sesión"} </Button>
     <p className="text-white">¿No tienes cuenta? <Link href="/signup">Registrate</Link> </p>
 </div>
 </form>

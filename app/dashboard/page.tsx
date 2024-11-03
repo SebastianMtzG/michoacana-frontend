@@ -13,7 +13,7 @@ export default function DashboardPage({ searchParams }:
          (
  <EmployeesLocation store={searchParams?.store} />
     
-): <p className="w-full"text-2xl px-2 text-center mt-10> Selecciona uan tienda para ver los empleado</p>
+): <p className="w-full text-2xl px-2 text-center mt-10"> Selecciona una tienda para ver los empleado</p>
       }
    </div>
     </div>
