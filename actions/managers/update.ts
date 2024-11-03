@@ -3,7 +3,7 @@ import { API_URL } from "@/constants";
 import { revalidateTag } from "next/cache";
 import { authHeaders } from "@/helpers/authHeaders";
 
-export default async function deleteManager(managerId: string,  formData: FormData){
+export default async function updateManager(managerId: string,  formData: FormData){
     let manager: any = {};
     for (const key  of formData.keys()){
         manager[key] = formData.get(key);
