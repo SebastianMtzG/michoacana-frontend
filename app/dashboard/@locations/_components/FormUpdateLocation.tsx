@@ -3,7 +3,7 @@ import { API_URL } from "@/constants";
 import SelectManager from "./SelectManager";
 import { authHeaders } from "@/helpers/authHeaders";
 import { Manager, Location } from "@/entities";
-import { updateLocation } from "@/actions/update";
+import { updateLocation } from "@/actions/locations/update";
 
 export default async function FormNewlocation({store}: {store:string | string[] | undefined} ) {
     if(!store || store === undefined || typeof store === "object") return null;
