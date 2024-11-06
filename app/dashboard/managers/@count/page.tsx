@@ -28,8 +28,7 @@ export default async function CountManagersPage(){
                 Hay {countNoStore} sin tienda
             </h1>
             <h1>El salario minimo es {max} sin tienda</h1>
-            <h1>El salario promedio es es {(salary/managers.length)} </h1>
-
+            <h1>El salario promedio es es {(salary/managers.length).toFixed(2)} </h1>
         </Card>
     )
 

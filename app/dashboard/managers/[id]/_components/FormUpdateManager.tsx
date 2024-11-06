@@ -15,7 +15,7 @@ export default async function FormUpdateManager({ manager }: { manager: Manager 
   const stores = await responseStores.json()
   return (
     <form action={updateManagerWithId}  className="bg-purple-500 rounded-md flex flex-col flex-grow-0 gap-2" >
-      <h3>Actualizar Manager</h3>
+      <h3 className="text-2xl text-white font-bold text-center">Actualizar Manager</h3>
       <Input
       required={true}
       isRequired
