@@ -12,7 +12,7 @@ export default function EmployeePhotoCard({employee} : { employee: Employee}){
             </CardHeader>
        
         <Divider/>
-        <Image src={employee.employeePhoto} className="z-0" classNames={{img:"size-72"}} />
+        <Image src={employee.employeePhoto} className="z-0 object-cover" classNames={{img:"size-72"}} />
         <CardFooter className="absolute bottom-0 h-14">
         <Link href={`/dashboard/employees/${employee.employeeId}`}>
         <Button variant="ghost">Actualizar</Button>
