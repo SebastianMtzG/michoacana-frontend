@@ -1,16 +1,19 @@
 
+
 import { Modal, ModalBody, ModalContent } from "@nextui-org/react";
-import { Button } from "@nextui-org/react";
-import { LuPlus} from "react-icons/lu";
+import { Image } from "@nextui-org/react";
 import { useDisclosure } from "@nextui-org/react";
-export default function CreateEmployee({ children}: { children: React.ReactNode}) {
+export default function CreateUser({ children, icon, photo }: { children: React.ReactNode, icon:React.ReactNode, photo: string | undefined }) {
     const { isOpen, onOpen, onOpenChange } = useDisclosure();
   
     return (
       <div>
-        <Button onPress={onOpen} color="primary">
-          <LuPlus size="20" />
-        </Button>
+        <Image src={photo} onClick={onOpen} isZoomed
+className="object-cover"
+classNames={{
+        img: "size-60"
+    }} />
+       
         <Modal className="bg-orange-400" isOpen={isOpen} onOpenChange={onOpenChange}>
           <ModalContent className="w-full">
             {() => (

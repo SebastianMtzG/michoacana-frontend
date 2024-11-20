@@ -1,7 +1,7 @@
 import { API_URL } from "@/constants";
 import { authHeaders } from "@/helpers/authHeaders";
 import { Employee, Location } from "@/entities";
-import EmployeeCard from "./_components/EmployeeCard";
+import EmployeeDataCard from "./_components/EmployeeCard";
 import EmployeePhotoCard from "./_components/EmployeePhotoCard";
 import CreateEmployee from "./_components/CreateEmployee";
 import FormCreateEmployee from "./_components/FormCreateEmployee";
@@ -25,7 +25,7 @@ const responseLocations = await fetch(`${API_URL}/locations`, {
         tags: ["dashboard:employees"],
     },
 });
-const locations : Location[] = await responseLocations.json()
+const locations : Location[] = await response.json()
 
 return (
     <div className="flex flex-wrap flex-grow-0 h-[90vh] gap-4 overflow-y-auto p-10">
