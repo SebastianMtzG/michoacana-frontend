@@ -4,7 +4,10 @@ import { API_URL } from "@/constants";
 import { authHeaders } from "@/helpers/authHeaders";
 import { Card, CardBody, CardHeader, Divider } from "@nextui-org/react";
 import Link from "next/link";
-
+import FormCreateUserManager from "../../employees/[id]/_components/FormCreateUser";
+import ModalGeneric from "../../_components/ModalGeneric";
+import { LuPlus } from "react-icons/lu";
+import FormUpdateUser from "../../employees/[id]/FormUpdateUser";
 export default async function ManagerCards(){
 const response = await fetch(`${API_URL}/managers`, {
         method: "GET",
@@ -23,6 +26,17 @@ const response = await fetch(`${API_URL}/managers`, {
 <Card className="mx-10 my-10 hoover:scale-130 hover:bg-pink-90">
     <CardHeader>
         <p className="full">Nombre: <b>{manager.managerFullNmame}</b></p>
+   {
+    manager.user ? (
+        <ModalGeneric icon={<LuPlus size="20"/>}>
+            <FormUpdateUser user={manager.user} />
+        </ModalGeneric>
+    ) : (
+        <ModalGeneric icon={<LuPlus size="20"/>}>
+        <FormCreateUserManager manager={manager} />
+    </ModalGeneric>  
+    )
+   }
     </CardHeader>
     <Divider/>
     <CardBody>

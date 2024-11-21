@@ -4,6 +4,7 @@ import { LuUser } from "react-icons/lu";
 import Link from "next/link";
 import FormCreateUserEmployee from "./FormCreateUser";
 import CreateUser from "./CreateUser";
+import FormUpdateUser from "../FormUpdateUser";
 import DeleteEmployee from "@/app/dashboard/employees/[id]/_components/DeleteEmployee";
 export default function EmployeeDataCard( {employee}: {employee: Employee}){
     return (
@@ -34,11 +35,14 @@ export default function EmployeeDataCard( {employee}: {employee: Employee}){
 
 <CreateUser icon={<LuUser size="20" />} photo={employee?.employeePhoto}>
 {
-    !employee.user && (
+    !employee.user ? (
         <FormCreateUserEmployee employee={employee} />
     )
+: (
+
+<FormUpdateUser user={employee.user}/>
+)
 }
-<FormCreateUserEmployee employee={employee}/>
 </CreateUser>
 </div>
     )
