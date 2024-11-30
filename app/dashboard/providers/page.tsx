@@ -23,7 +23,7 @@ return (
     <CreateProvider>
         <FormCreateProvider/>
     </CreateProvider>
-    <div className=" flex flex-wrap w-full py-20 flex-grow-0 gap-14">
+    <div className=" flex flex-wrap py-4 flex-grow-0 gap-6">
         {providers.map((provider: Provider) =>(
             <Link className="hover:scale:110 transition-transform" href={{pathname: `/dashboard/providers/${provider.providerId}`}}>
             <ProviderCard provider={provider} key={provider.providerId} />

@@ -1,5 +1,5 @@
 import { Location } from "@/entities";
-import { Card, CardHeader, CardBody, Divider } from "@nextui-org/react";
+import { Card, CardHeader, CardBody, Divider, Image } from "@nextui-org/react";
 import { API_URL } from "@/constants";
 import { datalist } from "framer-motion/client";
 import Link from "next/link";
@@ -30,6 +30,7 @@ export default async function LocationCard({ store }: {store: string | string[] 
            <p className="w-full">
             Dirección: <b>{data.locationAddress}</b>
            </p>
+            <Image src="/../../mapjuri.jpg" />
             </CardBody>
         </Card>
     );

@@ -1,13 +1,14 @@
 
-import { Card, Button, CardHeader, Divider, CardBody, CardFooter } from "@nextui-org/react"
+import { Card, Button, CardHeader, Divider, CardBody, CardFooter, Image } from "@nextui-org/react"
 import { Employee } from "@/entities"
 import Link from "next/link"
+
 
 export default function EmployeeCard({employee} : { employee: Employee}){
     return (
         <Card  className="size-72 max-h-72 min-h-72" >
             <CardHeader >
-             <h1 className="font-bold text-xl">  {employee.employeeName + " " + employee.employeeLastname}</h1> 
+             <h1 className=" text-xl ">  {employee.employeeName + " " + employee.employeeLastname}</h1> 
             </CardHeader>
        
         <Divider/>

@@ -27,7 +27,7 @@ export default async function FormNewlocation({store}: {store:string | string[] 
 
     const dataLocations: Location[] = await responseLocation.json()
     return (
-<form action={createLocation} className="bg-purple-600 py-1 px-2 flex flex-col gap-2 w-full rounded-lg">
+<form action={createLocation} className="bg-pink-600 py-1 px-2 flex flex-col gap-2 w-full pt-2 rounded-lg">
     <h1 className="text-2xl text-white text-center" >Crear Tienda</h1>
     <Input  required={true} label="Nombre" name="locationName" />
     <Input  required={true} label="Direccion" name="locationAdress" />

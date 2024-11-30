@@ -10,19 +10,19 @@ export default function DashboardLayout({
     children,
     locations,
 }: Readonly<{
-    children:React.ReactNode;
-    locations:React.ReactNode;
+    children: React.ReactNode;
+    locations: React.ReactNode;
 }>) {
     const path = usePathname();
-    return(
-         <div className="bg-pink-50">
-        <Header />
-        <div className="flex flex-row items-center">
-        <Sidebar />
-         {children}
-        {path === "/dashboard" ? locations : null}
+    return (
+        <div className="bg-pink-50">
+            <Header />
+            <div className="flex flex-row items-center">
+                <Sidebar />
+                {children}
+                {path === "/dashboard" ? locations : null}
+            </div>
+
         </div>
-      
-        </div>
-        );
+    );
 }

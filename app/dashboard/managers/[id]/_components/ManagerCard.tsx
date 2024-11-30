@@ -1,4 +1,4 @@
-import { Card, CardBody, CardHeader, Divider } from "@nextui-org/react"
+import { Card, CardBody, CardHeader, Divider , Image} from "@nextui-org/react"
 import { Manager } from "@/entities"
 import Link from "next/link"
 
@@ -15,7 +15,7 @@ export default function ManagerCard({manager} : {manager: Manager}){
        <p className={manager.location ? "" : "hidden"} ></p>
         <p className="w-full">Teléfono: <b>{manager.managerPhotoNumber}</b></p>
         <p  className="w-full">
-            Salario: <b>[manager.managerSalary]</b>
+            Salario: <b>{manager.managerSalary}</b>
         </p>
         <p className={manager.location ? "" : "hidden"}> Tienda: { " " }
             <Link 
@@ -33,9 +33,7 @@ export default function ManagerCard({manager} : {manager: Manager}){
         {
             manager.location ? (
                 <>
-                <p>
-                    Tienda en esta locacion ...
-                </p>
+                <Image  src="/../../map2.png" />
                 </>
             ) : (<p> NO TIENDA</p>)
         }

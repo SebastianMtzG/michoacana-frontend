@@ -11,7 +11,7 @@ const ManagersPage = async () => {
             ...authHeaders(),
         }
     })
-    const stores: Location[] = await responseStores.json()
+    const stores: Location[] = await responseStores.json();
     return ( 
     <ModalGeneric icon={<LuPlus size="20" />} >
         <FormCreateManager stores={stores} />

@@ -5,7 +5,7 @@ import { Button } from "@nextui-org/react";
 import createManager from "@/actions/managers/create";
 export default function FormCreateManager({stores}: {stores: Location[]}){
     return (
-    <form action={createManager} className="flex flex-xol gap-4">
+    <form action={createManager} className="flex flex-col gap-4">
         <h1 className="text 2xl font-bold text-white"></h1>
         <Input label="Nombre completo" name="managerFullName" />
         <Input label="Salario" name="managerSalary" />

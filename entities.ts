@@ -19,7 +19,7 @@ employeePhonenumber: string;
 employeeEmail: string;
 employeePhoto?: string
 
-location?:Location;
+location:Location;
 user?: any;
 }
 

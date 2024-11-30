@@ -1,11 +1,11 @@
 "use client";
 
-import {Modal, ModalContent, ModalHeader, ModalBody, ModalFooter, Button, useDisclosure} from "@nextui-org/react";
+import { Modal, ModalContent, ModalHeader, ModalBody, ModalFooter, Button, useDisclosure } from "@nextui-org/react";
 import { ReactNode } from "react";
 import { LuPencil } from "react-icons/lu";
 
-export default function UpdateManager({children} : {children: ReactNode} ) {
-  const {isOpen, onOpen, onOpenChange} = useDisclosure();
+export default function UpdateManager({ children }: { children: ReactNode }) {
+  const { isOpen, onOpen, onOpenChange } = useDisclosure();
 
   return (
     <div>
@@ -15,11 +15,11 @@ export default function UpdateManager({children} : {children: ReactNode} ) {
           {() => (
             <>
               <ModalBody>
-                {children}               
-               
+                {children}
+
               </ModalBody>
-        
-        
+
+
 
             </>
           )}

@@ -1,17 +1,18 @@
 "use client";
+import registerEmployee from "@/actions/users/register-employee";
 import { Input, Button } from "@nextui-org/react";
-import { Employee, Manager } from "@/entities";
+import { Employee } from "@/entities";
 import { useState } from "react";
 import { generate } from "generate-password";
 import { LuEye } from "react-icons/lu";
-export default function FormCreateUserManager({ manager }: { manager: Manager }) {
+export default function FormCreateUserEmployee({ employee }: { employee: Employee }) {
     const [password, setPassword] = useState<string>();
     const [visible, setVisible] = useState<boolean>(false);
-    const {managerId} = manager;
-    const registerManagerById = registerManager.bind(null, managerId);
+    const {employeeId} = employee;
+    const registerEmployeeById = registerEmployee.bind(null, employeeId);
 
     return (
-        <form action={registerManagerById} className="py-10 flex flex-col gap-2">
+        <form action={registerEmployeeById} className="py-10 flex flex-col gap-2">
             <h1 className="text-white text-center">Crear Usuario</h1>
             <Input name="userEmail" label="Correo de cuenta" />
             <Input value={password} type={visible ? "text" : 

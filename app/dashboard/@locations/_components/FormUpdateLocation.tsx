@@ -32,8 +32,8 @@ export default async function FormNewlocation({store}: {store:string | string[] 
     let foundManager = dataManagers.find((manager) => manager.managerId === foundLocation?. managers?.managerId)
 
     return (
-<form action={updateWithStoreId} className="bg-purple-600 py-2 px-4 fex flex-col gap-6 w-full rounded-lg">
-    <h1 className="text-3xl text-white text-center" >Crear Tienda</h1>
+<form action={updateWithStoreId} className="bg-pink-600 py-2 px-4 flex flex-col gap-6 w-full rounded-lg">
+    <h1 className="text-3xl text-white text-center" >Actualizar</h1>
     <Input required={true} defaultValue={foundLocation?.locationName} label="Nombre" name="locationName" />
     <Input required={true} defaultValue={foundLocation?.locationAddress} label="Direccion" name="locationAdress" />
     <Input required={true} defaultValue={foundLocation?.locationLatLng[0].toString()} label="Latitud" name="locationLat" />

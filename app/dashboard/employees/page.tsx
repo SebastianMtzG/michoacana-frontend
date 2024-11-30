@@ -25,7 +25,7 @@ const responseLocations = await fetch(`${API_URL}/locations`, {
         tags: ["dashboard:employees"],
     },
 });
-const locations : Location[] = await response.json()
+const locations : Location[] = await responseLocations.json()
 
 return (
     <div className="flex flex-wrap flex-grow-0 h-[90vh] gap-4 overflow-y-auto p-10">

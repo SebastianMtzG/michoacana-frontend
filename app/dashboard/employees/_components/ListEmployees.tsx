@@ -13,7 +13,7 @@ export default function ListEmployees({employees, locations} : {employees : Empl
     
     <div className="">
     {
-        location && (
+        locations && (
     <Select
     label= "Tiendas"
     defaultSelectedKeys={[]}
